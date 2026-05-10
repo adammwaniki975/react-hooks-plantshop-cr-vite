@@ -8,3 +8,20 @@ function PlantList() {
 }
 
 export default PlantList;
+import PlantCard from "./PlantCard";
+
+function PlantList({ plants, onSoldOut }) {
+  return (
+    <div>
+      {plants.map(plant => (
+        <PlantCard
+          key={plant.id}
+          plant={plant}
+          onSoldOut={onSoldOut}
+        />
+      ))}
+    </div>
+  );
+}
+
+export default PlantList;
